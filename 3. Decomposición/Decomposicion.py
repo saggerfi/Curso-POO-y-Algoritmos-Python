@@ -25,3 +25,8 @@ class Motor:
 
     def inyecta_gasolina(self, cantidad):
         pass 
+
+class Frenos:
+
+    def __init__(self,):
+        super().__init__()
