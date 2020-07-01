@@ -6,7 +6,8 @@ class Automovi:
         self.marca = marca
         self.color = color
         self._estado = 'en reposo'
-        self._motor = Motor(cilindros = 4) 
+        self._motor = Motor(cilindros = 4)
+        self._frenos = Frenos(tipo = 5) 
     
     def acelerar(self, tipo = 'despacio'):
         if tipo == 'rapida':
@@ -15,6 +16,14 @@ class Automovi:
             self._motor.inyecta_gasolina(3)
         
         self._estado = 'en_movimiento'
+    
+    def frenar(self, tipo = 'ABS'):
+        if tipo == 'otro':
+            self._frenos.activar_frenos(10)
+        else:
+            self._frenos.activar_frenos(5)
+        
+        self._estado = 'frenando'
 
 class Motor:
 
@@ -28,5 +37,8 @@ class Motor:
 
 class Frenos:
 
-    def __init__(self,):
-        super().__init__()
+    def __init__(self, tipo):
+        self.tipo = tipo
+    
+    def activar_frenos(self, tiempo):
+        pass
